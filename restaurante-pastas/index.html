@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solo Pastas · Oeste-Lincoln | Trattoria italiana en Cochabamba</title>
+<meta name="description" content="Solo Pastas Oeste-Lincoln: trattoria italiana frente al Parque Lincoln, Cochabamba. Pastas largas, verdes, cortas y sin gluten, principales con salsas de la casa y pastas al horno.">
+<meta name="theme-color" content="#17130F">
+<meta property="og:title" content="Solo Pastas · Oeste-Lincoln">
+<meta property="og:description" content="Trattoria italiana frente al Parque Lincoln, Cochabamba. Pasta desde Bs 52.">
+<meta property="og:image" content="img/local.jpg">
+<meta property="og:type" content="restaurant">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   SOLO PASTAS · OESTE-LINCOLN — Trattoria
+   Marfil + espresso, rojo tomate profundo, verde albahaca, oro del logo.
+   ===================================================================== */
+:root{
+  --paper:#F6F0E4;
+  --paper-2:#EEE5D4;
+  --ink:#1D1814;
+  --ink-2:#5A5047;
+  --ink-3:#7A6E62;
+  --night:#17130F;
+  --rosso:#9E1B1F;
+  --rosso-2:#7E1418;
+  --rosso-logo:#E1141E;
+  --basilico:#2E5E3E;
+  --verde-logo:#2E9E5B;
+  --oro:#D8B43A;
+  --line:rgba(29,24,20,.14);
+  --line-light:rgba(246,240,228,.16);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --wrap:1240px;
+  --gutter:clamp(16px,4.5vw,48px);
+  --r:4px;
+  --ease:cubic-bezier(.22,.7,.18,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.65;color:var(--ink);background:var(--paper);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+svg{display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:1.02;letter-spacing:-.01em}
+p{margin:0}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:300;background:var(--oro);color:var(--ink);padding:12px 18px;border-radius:var(--r);font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+
+/* Tricolore: filete fino */
+.tricolore{display:flex;height:3px;width:72px}
+.tricolore i{flex:1}
+.tricolore i:nth-child(1){background:var(--verde-logo)}
+.tricolore i:nth-child(2){background:#fff}
+.tricolore i:nth-child(3){background:var(--rosso-logo)}
+
+/* ---------- Botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:var(--r);border:1px solid transparent;font:600 13.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .2s var(--ease)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn--primary{background:var(--rosso);color:#fff}
+.btn--primary:hover{background:var(--rosso-2)}
+.btn--light{background:var(--paper);color:var(--ink)}
+.btn--light:hover{background:#fff}
+.btn--line{background:transparent}
+.btn--line-dark{color:var(--ink);border-color:var(--ink)}
+.btn--line-dark:hover{background:var(--ink);color:var(--paper)}
+.btn--line-light{color:var(--paper);border-color:rgba(246,240,228,.55)}
+.btn--line-light:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--rosso);background:linear-gradient(currentColor,currentColor) 0 78%/0 1px no-repeat;transition:background-size .35s var(--ease)}
+.link:hover{background-size:100% 1px}
+.link svg{width:15px;height:15px;transition:transform .25s var(--ease)}
+.link:hover svg{transform:translateX(3px)}
+
+/* =====================================================================
+   1) NAVBAR STICKY
+   ===================================================================== */
+.nav{position:fixed;inset:0 0 auto;z-index:100;color:var(--paper);transition:transform .4s var(--ease),background .35s,color .35s,box-shadow .35s}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:20px;transition:padding .35s var(--ease)}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{width:54px;height:54px;border-radius:50%;object-fit:cover;background:#fff;transition:width .35s var(--ease),height .35s var(--ease)}
+.brand__txt{display:flex;flex-direction:column;line-height:1}
+.brand__name{font-family:var(--serif);font-weight:600;font-size:26px;letter-spacing:.01em;transition:font-size .35s var(--ease)}
+.brand__sub{font-size:10.5px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;margin-top:6px;opacity:.85}
+.nav__links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
+.nav__links a{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.85;transition:opacity .2s}
+.nav__links a::after{content:"";position:absolute;left:16px;right:16px;bottom:8px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav__links a:hover,.nav__links a.is-active{opacity:1}
+.nav__links a:hover::after,.nav__links a.is-active::after{transform:scaleX(1)}
+.nav__cta{display:flex;align-items:center;gap:12px}
+.nav__cta .btn{min-height:44px;padding:0 20px;font-size:12px}
+.nav__progress{position:absolute;left:0;bottom:0;height:2px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--verde-logo) 0 33.3%,#fff 33.3% 66.6%,var(--rosso-logo) 66.6%)}
+/* compacta al bajar 40px */
+.nav.is-compact{background:rgba(246,240,228,.96);color:var(--ink);box-shadow:0 1px 0 var(--line),0 12px 32px -18px rgba(29,24,20,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav.is-compact .nav__inner{padding-block:9px}
+.nav.is-compact .brand img{width:40px;height:40px}
+.nav.is-compact .brand__name{font-size:22px}
+.nav.is-compact .brand__sub{color:var(--rosso);opacity:1}
+/* se oculta al bajar, reaparece al subir */
+.nav.is-hidden{transform:translateY(-100%)}
+.burger{display:none;width:48px;height:48px;border:1px solid currentColor;border-radius:var(--r);background:transparent;color:inherit;cursor:pointer;position:relative}
+.burger span{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;transition:transform .3s var(--ease),opacity .2s}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:29px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav__mobile-extra{display:none}
+@media (max-width:859.98px){
+  .burger{display:block}
+  .nav__cta .btn{display:none}
+  .nav__links{position:fixed;inset:0;z-index:-1;height:100dvh;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;padding:110px var(--gutter) 40px;background:var(--night);color:var(--paper);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+  .nav__links a{font-family:var(--serif);font-size:44px;font-weight:500;letter-spacing:0;text-transform:none;min-height:66px;padding:0;opacity:1}
+  .nav__links a::after{left:0;right:0;bottom:12px}
+  .nav__links li{transform:translateY(14px);opacity:0;transition:transform .5s var(--ease),opacity .5s}
+  .nav.is-open .nav__links{opacity:1;visibility:visible}
+  .nav.is-open .nav__links li{transform:none;opacity:1}
+  .nav.is-open .nav__links li:nth-child(2){transition-delay:.05s}
+  .nav.is-open .nav__links li:nth-child(3){transition-delay:.1s}
+  .nav.is-open .nav__links li:nth-child(4){transition-delay:.15s}
+  .nav.is-open .nav__links li:nth-child(5){transition-delay:.2s}
+  .nav.is-open{background:transparent;color:var(--paper);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .nav.is-open .brand__sub{color:inherit}
+  .nav__mobile-extra{display:block;margin-top:32px}
+  .nav__links .nav__mobile-extra .btn{font-family:var(--sans);font-size:13px;letter-spacing:.09em;text-transform:uppercase;min-height:54px;padding:0 28px}
+  .nav__links .nav__mobile-extra .btn::after{display:none}
+}
+
+/* =====================================================================
+   2) SCROLL REVEAL
+   ===================================================================== */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0ms)}
+.js .reveal.left{transform:translateX(-44px)}
+.js .reveal.right{transform:translateX(44px)}
+.js .reveal.zoom{transform:scale(.94)}
+.js .reveal.is-visible{opacity:1;transform:none}
+/* Entrada del hero al cargar */
+.js [data-enter]{opacity:0;transform:translateY(22px);animation:enter 1.1s var(--ease) forwards;animation-delay:var(--d,0ms)}
+@keyframes enter{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal,.js .reveal.left,.js .reveal.right,.js .reveal.zoom,.js [data-enter]{opacity:1;transform:none;transition:none;animation:none}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+
+/* ---------- Tipografía de sección ---------- */
+section{position:relative}
+.h2{font-size:clamp(42px,5.6vw,76px)}
+.h2 em{color:var(--rosso)}
+.lead{font-size:clamp(17px,1.4vw,19px);color:var(--ink-2);max-width:56ch}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:56px}
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.hero{background:var(--night);color:var(--paper);min-height:min(100svh,1000px);display:flex;align-items:center;padding-block:140px 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 78% 40%,rgba(216,180,58,.10),transparent 70%);pointer-events:none}
+.hero__grid{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+.hero__place{display:flex;align-items:center;gap:16px;font-size:12.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,240,228,.75)}
+.hero h1{font-size:clamp(54px,7.4vw,108px);font-weight:500;margin-top:28px;line-height:.98}
+.hero h1 em{color:var(--oro);font-weight:500}
+.hero__lead{margin-top:30px;font-size:clamp(17px,1.4vw,19px);color:rgba(246,240,228,.8);max-width:46ch}
+.hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero__meta{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 44px;margin:56px 0 0;padding:28px 0 0;border-top:1px solid var(--line-light);list-style:none}
+.hero__meta strong{display:block;font-family:var(--serif);font-size:28px;font-weight:600;line-height:1.1;color:var(--paper)}
+.hero__meta span{font-size:13px;color:rgba(246,240,228,.7)}
+.hero__media{position:relative;justify-self:end;width:100%;max-width:520px}
+.hero__photo{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;border-radius:var(--r)}
+.hero__photo img{width:100%;height:100%;object-fit:cover;object-position:68% 50%;transition:transform 1.2s var(--ease)}
+.hero__photo:hover img{transform:scale(1.03)}
+.hero__frame{position:absolute;inset:-18px 18px 18px -18px;border:1px solid rgba(216,180,58,.45);border-radius:var(--r);pointer-events:none}
+.hero__inset{position:absolute;left:-56px;bottom:-40px;width:46%;aspect-ratio:1;margin:0;border:8px solid var(--night);border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.hero__inset img{width:100%;height:100%;object-fit:cover}
+.hero__seal{position:absolute;right:-26px;top:-30px;width:122px;height:122px;animation:spin 40s linear infinite}
+.hero__seal text{font:600 10.5px var(--sans);letter-spacing:.34em;fill:var(--oro);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* =====================================================================
+   LA CASA
+   ===================================================================== */
+.casa{padding-block:140px 120px}
+.casa__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.casa__statement{font-size:clamp(36px,4.4vw,58px);line-height:1.08}
+.casa__statement em{color:var(--rosso)}
+.casa__text{margin-top:28px;display:grid;gap:16px;color:var(--ink-2);max-width:52ch}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:48px 0 0;border-top:1px solid var(--line);list-style:none;padding:0}
+.facts li{padding:22px 16px 0 0}
+.facts li+li{padding-left:18px;border-left:1px solid var(--line)}
+.facts strong{display:block;font-family:var(--serif);font-weight:600;font-size:36px;line-height:1;color:var(--ink)}
+.facts span{display:block;margin-top:8px;font-size:13px;color:var(--ink-2);line-height:1.4}
+.casa__media{position:relative;padding:0 0 70px 70px}
+.casa__media figure{margin:0;overflow:hidden;border-radius:var(--r)}
+.casa__media img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.casa__media figure:hover img{transform:scale(1.03)}
+.casa__main{aspect-ratio:4/5}
+.casa__small{position:absolute;left:0;bottom:0;width:48%;aspect-ratio:1;border:10px solid var(--paper)}
+
+/* =====================================================================
+   LA CARTA
+   ===================================================================== */
+.carta{background:var(--paper-2);padding-block:130px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px 34px;border-bottom:1px solid var(--line);margin-bottom:48px}
+.tab{position:relative;display:inline-flex;align-items:baseline;gap:6px;min-height:56px;padding:0;border:0;background:none;font-family:var(--serif);font-size:25px;font-weight:500;color:var(--ink-3);cursor:pointer;transition:color .25s}
+.tab sup{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--ink-3)}
+.tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--rosso);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.tab:hover,.tab[aria-selected="true"]{color:var(--ink)}
+.tab[aria-selected="true"]::after{transform:scaleX(1)}
+.tab[aria-selected="true"] sup{color:var(--rosso)}
+.carta__body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+.carta__visual{position:sticky;top:100px;margin:0}
+.carta__photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--r);background:var(--night)}
+.carta__photo img{width:100%;height:100%;object-fit:cover;transition:opacity .3s,transform 1s var(--ease)}
+.carta__photo:hover img{transform:scale(1.03)}
+.carta__visual.is-swap img{opacity:0}
+.carta__note{margin-top:18px;display:flex;align-items:flex-start;gap:14px;font-size:14px;color:var(--ink-2)}
+.carta__note b{flex:none;font-family:var(--serif);font-size:44px;line-height:.8;color:var(--rosso);font-weight:600}
+.carta__intro{font-family:var(--serif);font-style:italic;font-size:23px;color:var(--ink-2)}
+.dishes{list-style:none;margin:0;padding:0}
+.dish{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;padding:22px 0;border-bottom:1px solid var(--line);animation:dishIn .6s var(--ease) both;animation-delay:calc(var(--i,0) * 45ms)}
+@keyframes dishIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.dish__name{display:flex;align-items:baseline;gap:14px;min-width:0}
+.dish h3{font-size:25px;font-weight:600;line-height:1.15}
+.dish__lead{flex:1;min-width:24px;border-bottom:1px dotted rgba(29,24,20,.35);transform:translateY(-6px)}
+.dish__price{font-family:var(--serif);font-size:25px;font-weight:600;white-space:nowrap;align-self:baseline}
+.dish__price small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--ink-3);margin-right:4px}
+.dish__price.ask{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.dish p{grid-column:1;font-size:15px;color:var(--ink-2);max-width:60ch}
+.dish__side{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:flex-end;gap:14px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--basilico);white-space:nowrap}
+.tag--rosso{color:var(--rosso)}
+.dish .link{min-height:36px}
+.carta__foot{margin-top:28px;font-size:14px;color:var(--ink-2)}
+.carta__foot .link{min-height:0;font-size:12px}
+
+/* =====================================================================
+   PARA LA MESA (galería)
+   ===================================================================== */
+.mesa{padding-block:130px 120px}
+.mesa__grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
+.mesa__grid figure{margin:0;overflow:hidden;border-radius:var(--r);height:clamp(300px,34vw,500px)}
+.mesa__grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.mesa__grid figure:hover img{transform:scale(1.03)}
+
+/* =====================================================================
+   CÓMO PEDIR
+   ===================================================================== */
+.pedir{background:var(--rosso-2);color:var(--paper);padding-block:130px;overflow:hidden}
+.pedir::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(0deg,rgba(0,0,0,.08) 0 2px,transparent 2px 46px),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.08) 0 2px,transparent 2px 46px);pointer-events:none}
+.pedir .wrap{position:relative}
+.pedir .h2 em{color:var(--oro)}
+.pedir .lead{color:rgba(246,240,228,.88)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;margin:0;padding:0;border-top:1px solid var(--line-light)}
+.step{padding:40px 40px 8px 0}
+.step+.step{padding-left:40px;border-left:1px solid var(--line-light)}
+.step__n{font-family:var(--serif);font-style:italic;font-size:80px;line-height:.8;color:var(--oro);font-weight:500}
+.step h3{font-size:34px;margin-top:26px}
+.step p{margin-top:12px;color:rgba(246,240,228,.88);max-width:34ch}
+.pedir__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:56px}
+
+/* =====================================================================
+   VISÍTANOS
+   ===================================================================== */
+.visita{padding-block:130px}
+.visita__grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:stretch}
+.visita__photo{position:relative;margin:0;overflow:hidden;border-radius:var(--r);aspect-ratio:857/530;align-self:center;background:var(--paper-2)}
+.visita__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.visita__photo:hover img{transform:scale(1.03)}
+.info{display:flex;flex-direction:column}
+.info__block{padding:20px 0;border-bottom:1px solid var(--line)}
+.info__block:first-child{padding-top:0}
+.info__label{font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+.info__value{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.15;margin-top:6px}
+.info__sub{font-size:14.5px;color:var(--ink-2);margin-top:4px}
+.info ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;font-size:15.5px}
+.info ul li{display:flex;justify-content:space-between;gap:16px}
+.info ul li span{color:var(--ink-2);text-align:right}
+.services{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:10px;font-size:15px}
+.services span{display:inline-flex;align-items:center;gap:8px}
+.services span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--basilico)}
+.info__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:28px}
+.map{margin-top:56px;height:380px;border-radius:var(--r);overflow:hidden;background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--line)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.35) sepia(.12)}
+
+/* =====================================================================
+   CIERRE
+   ===================================================================== */
+.cierre{background:var(--night);color:var(--paper);padding-block:140px;text-align:center;overflow:hidden}
+.cierre::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 60% at 50% 50%,rgba(216,180,58,.10),transparent 70%)}
+.cierre .wrap{position:relative;display:flex;flex-direction:column;align-items:center}
+.cierre img{width:96px;height:96px;border-radius:50%;background:#fff}
+.cierre h2{font-size:clamp(64px,12vw,180px);font-style:italic;font-weight:500;margin-top:34px;line-height:.9}
+.cierre h2 span{color:var(--oro)}
+.cierre p{margin-top:24px;font-size:18px;color:rgba(246,240,228,.78);max-width:44ch}
+.cierre .btn{margin-top:40px}
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.footer{background:#100D0A;color:rgba(246,240,228,.75);font-size:14.5px}
+.footer .tricolore{width:100%}
+.footer__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:48px;padding-block:80px 56px}
+.footer .brand{color:var(--paper)}
+.footer__about{margin-top:20px;max-width:34ch}
+.footer h4{margin:0 0 18px;font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--oro)}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.footer li>span{display:block;padding-block:8px}
+.footer a{display:inline-flex;align-items:center;min-height:38px;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 80%/0 1px no-repeat;transition:background-size .35s var(--ease),color .2s}
+.footer a:hover{color:var(--paper);background-size:100% 1px}
+.social{display:flex;gap:10px;margin-top:24px}
+.footer .social a{width:44px;height:44px;justify-content:center;border:1px solid rgba(246,240,228,.22);border-radius:50%;background:none;transition:border-color .25s,color .25s,transform .2s var(--ease)}
+.footer .social a:hover{border-color:var(--oro);color:var(--oro);transform:translateY(-2px)}
+.social svg{width:18px;height:18px}
+.footer__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-block:24px 28px;border-top:1px solid rgba(246,240,228,.1);font-size:12.5px;color:rgba(246,240,228,.55)}
+.footer__bottom a{display:inline;min-height:0}
+
+/* Barra de pedido en móvil */
+.mbar{display:none}
+@media (max-width:859.98px){
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:90;padding:8px;border-radius:8px;background:var(--night);box-shadow:0 18px 40px -12px rgba(0,0,0,.55);transition:transform .4s var(--ease)}
+  .mbar .btn{min-height:50px;padding:0 10px;font-size:12px}
+  .mbar.is-off{transform:translateY(150%)}
+  body{padding-bottom:80px}
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){
+  .carta__body{grid-template-columns:1fr;gap:40px}
+  .carta__visual{position:relative;top:0}
+  .carta__photo{aspect-ratio:16/9}
+  .footer__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:960px){
+  .hero{padding-block:120px 90px;min-height:auto}
+  .hero__grid{grid-template-columns:1fr;gap:72px}
+  .hero__media{justify-self:center;max-width:460px;margin-left:40px}
+  .sec-head{grid-template-columns:1fr;gap:20px;margin-bottom:44px}
+  .casa__grid{grid-template-columns:1fr;gap:56px}
+  .casa__media{max-width:560px}
+  .visita__grid{grid-template-columns:1fr;gap:40px}
+  .steps{grid-template-columns:1fr}
+  .step,.step+.step{padding:32px 0;border-left:0;border-bottom:1px solid var(--line-light)}
+  .mesa__grid{grid-template-columns:1fr 1fr}
+  .mesa__grid figure:first-child{grid-column:1/-1;height:auto;aspect-ratio:16/9}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding-top:112px}
+  .hero__place{letter-spacing:.2em;font-size:11px}
+  .hero__actions .btn{flex:1 1 100%}
+  .hero__meta{grid-template-columns:1fr 1fr;gap:20px 24px}
+  .hero__meta li:last-child{grid-column:1/-1}
+  .hero__media{margin-left:28px;margin-right:8px;width:auto}
+  .hero__inset{left:-28px;bottom:-28px;width:44%;border-width:6px}
+  .hero__frame{inset:-10px 10px 10px -10px}
+  .hero__seal{width:92px;height:92px;right:-10px;top:-22px}
+  .casa,.carta,.mesa,.pedir,.visita{padding-block:96px}
+  .casa__media{padding:0 0 48px 40px}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts li:nth-child(3){padding-left:0;border-left:0}
+  .facts li:nth-child(n+3){border-top:1px solid var(--line);margin-top:20px}
+  .tabs{gap:0 22px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{font-size:21px;white-space:nowrap;flex:none}
+  .carta__photo{aspect-ratio:4/3}
+  .dish h3,.dish__price{font-size:22px}
+  .dish__side{grid-column:1/-1;grid-row:auto;justify-content:space-between}
+  .mesa__grid{grid-template-columns:1fr}
+  .mesa__grid figure,.mesa__grid figure:first-child{height:auto;aspect-ratio:4/3;grid-column:auto}
+  .pedir__cta .btn,.info__actions .btn{flex:1 1 100%}
+  .info__value{font-size:26px}
+  .map{height:300px}
+  .footer__grid{grid-template-columns:1fr;gap:36px}
+  .brand__name{font-size:22px}
+  .brand img{width:44px;height:44px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- =================== 1) NAVBAR =================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#inicio" aria-label="Solo Pastas Oeste-Lincoln, ir al inicio">
+      <img src="img/logo.png" alt="" width="54" height="54">
+      <span class="brand__txt">
+        <span class="brand__name">Solo Pastas</span>
+        <span class="brand__sub">Oeste · Lincoln</span>
+      </span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#inicio" data-link="inicio">Inicio</a></li>
+        <li><a href="#menu" data-link="menu">Menú</a></li>
+        <li><a href="#como-pedir" data-link="como-pedir">Cómo pedir</a></li>
+        <li><a href="#visitanos" data-link="visitanos">Visítanos</a></li>
+        <li class="nav__mobile-extra"><a class="btn btn--primary js-order" href="#como-pedir">Pedir ahora</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--primary js-order" href="#como-pedir">Pedir ahora</a>
+      <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav__progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<main id="contenido">
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="hero__place" data-enter style="--d:100ms"><span class="tricolore" aria-hidden="true"><i></i><i></i><i></i></span>Trattoria · Cochabamba</p>
+      <h1 id="hero-title" data-enter style="--d:220ms">Pasta italiana, <em>frente al Parque Lincoln.</em></h1>
+      <p class="hero__lead" data-enter style="--d:360ms">Spaghetti, fettuccine, raviolis y lasagnas al horno, con salsas de la casa y la pasta que elijas. Una mesa con mantel, o tu pedido listo para llevar.</p>
+      <div class="hero__actions" data-enter style="--d:480ms">
+        <a class="btn btn--primary js-order" href="#como-pedir">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-.9.2-3-.6-2.5-1-4.1-3.6-4.2-3.8-.1-.2-1-1.3-1-2.5s.6-1.8.9-2.1c.2-.2.5-.3.6-.3h.5c.1 0 .4 0 .6.4l.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.5.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.6-.1 1.2Z"/></svg>
+          Pedir por WhatsApp
+        </a>
+        <a class="btn btn--line btn--line-light" href="#menu">Ver la carta</a>
+      </div>
+      <ul class="hero__meta" data-enter style="--d:600ms">
+        <li><strong>Bs 52</strong><span>La pasta, desde</span></li>
+        <li><strong>4 pastas</strong><span>Larga, corta, verde, sin gluten</span></li>
+        <li><strong data-assumed>11:30 – 22:00</strong><span>Todos los días</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__media" data-enter style="--d:300ms">
+      <span class="hero__frame" aria-hidden="true"></span>
+      <figure class="hero__photo">
+        <img src="img/carbonara.jpg" alt="Spaghetti a la carbonara en plato oscuro sobre mesa de madera" width="960" height="640" fetchpriority="high" data-source="stand-in">
+      </figure>
+      <figure class="hero__inset">
+        <img src="img/lasagna.jpg" alt="Lasagna gratinada de Solo Pastas en fuente de barro" width="625" height="499" data-source="client">
+      </figure>
+      <svg class="hero__seal" viewBox="0 0 120 120" aria-hidden="true">
+        <defs><path id="seal" d="M60 60 m -46 0 a 46 46 0 1 1 92 0 a 46 46 0 1 1 -92 0"/></defs>
+        <circle cx="60" cy="60" r="59" fill="#17130F" stroke="rgba(216,180,58,.5)"/>
+        <text><textPath href="#seal">Solo Pastas · Cucina italiana · </textPath></text>
+        <text x="60" y="68" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;letter-spacing:0;fill:#F6F0E4">SP</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LA CASA =================== -->
+<section class="casa" id="la-casa" aria-labelledby="casa-title">
+  <div class="wrap casa__grid">
+    <div>
+      <h2 id="casa-title" class="casa__statement reveal">Cuatro pastas, salsas de la casa y <em>una mesa con mantel a cuadros.</em></h2>
+      <div class="casa__text reveal" style="--d:120ms">
+        <p>En Solo Pastas la carta gira alrededor de una sola cosa. Eliges la pasta, larga, corta, verde de espinaca o sin gluten, y la acompañas con lomo, pollo, langostinos o una salsa de tres quesos.</p>
+        <p>Los principales llegan con pasta larga a elección, y las lasagnas, canelones y raviolis salen gratinados del horno.</p>
+      </div>
+      <ul class="facts reveal" style="--d:220ms">
+        <li><strong>13</strong><span>principales con pasta a elección</span></li>
+        <li><strong>9</strong><span>pastas al horno</span></li>
+        <li><strong>Bs 7</strong><span>el pan con ajo, para empezar</span></li>
+        <li><strong>4</strong><span>sucursales en Cochabamba</span></li>
+      </ul>
+    </div>
+    <div class="casa__media">
+      <figure class="casa__main reveal right"><img src="img/pasta-fresca.jpg" alt="Pasta fresca recién cortada colgando de un rodillo de madera" width="1280" height="908" loading="lazy" data-source="stand-in"></figure>
+      <figure class="casa__small reveal zoom" style="--d:200ms"><img src="img/plato-principal.jpg" alt="Fettuccine verde con filete en salsa de champiñones de Solo Pastas" width="625" height="498" loading="lazy" data-source="client"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LA CARTA =================== -->
+<section class="carta" id="menu" aria-labelledby="menu-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="menu-title" class="h2 reveal">La <em>carta</em></h2>
+      <p class="lead reveal" style="--d:120ms">Los principales vienen con pasta larga a elección. Súmale langostinos, champiñones fritos o parmesano extra, que están en postres y extras.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Categorías de la carta" id="tabs"></div>
+
+    <div class="carta__body">
+      <figure class="carta__visual" id="carta-visual">
+        <div class="carta__photo"><img id="carta-img" src="img/plato-principal.jpg" alt="" width="625" height="498"></div>
+        <p class="carta__note"><b id="carta-count">13</b><span id="carta-note"></span></p>
+      </figure>
+      <div>
+        <p class="carta__intro" id="carta-intro"></p>
+        <ul class="dishes" id="dishes" role="tabpanel" aria-live="polite"></ul>
+        <p class="carta__foot">Precios en bolivianos, sujetos a cambio. También puedes pedir en la tienda en línea de <a class="link" href="https://www.mercat.bo/solo-pastas" target="_blank" rel="noopener">Mercat</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PARA LA MESA =================== -->
+<section class="mesa" aria-labelledby="mesa-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="mesa-title" class="h2 reveal">Para la <em>mesa</em></h2>
+      <p class="lead reveal" style="--d:120ms">Gnocchi gratinados, bruschettas para abrir y raviolis rellenos de ricotta. Lo de siempre en una trattoria, al almuerzo o a la cena.</p>
+    </div>
+    <div class="mesa__grid">
+      <figure class="reveal"><img src="img/gnocchi.jpg" alt="Gnocchi gratinados con salsa de tomate, mozzarella y albahaca" width="1280" height="719" loading="lazy" data-source="stand-in"></figure>
+      <figure class="reveal" style="--d:120ms"><img src="img/bruschetta.jpg" alt="Bruschettas con tomate, mozzarella, albahaca y aceitunas" width="1280" height="962" loading="lazy" data-source="stand-in"></figure>
+      <figure class="reveal" style="--d:240ms"><img src="img/ravioli.jpg" alt="Raviolis rellenos sobre mesa enharinada" width="1280" height="962" loading="lazy" data-source="stand-in"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CÓMO PEDIR =================== -->
+<section class="pedir" id="como-pedir" aria-labelledby="pedir-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="pedir-title" class="h2 reveal">Pide en <em>tres pasos</em></h2>
+      <p class="lead reveal" style="--d:120ms">Sin registros ni apps nuevas. Nos escribes, confirmamos tu pedido y entra a la cocina.</p>
+    </div>
+    <ol class="steps">
+      <li class="step reveal left">
+        <span class="step__n" aria-hidden="true">i.</span>
+        <h3>Elige tu plato</h3>
+        <p>Revisa la carta y elige. Los principales llevan la pasta larga que prefieras.</p>
+      </li>
+      <li class="step reveal" style="--d:150ms">
+        <span class="step__n" aria-hidden="true">ii.</span>
+        <h3>Escríbenos</h3>
+        <p>Por WhatsApp, o directo en nuestra tienda en línea de Mercat.</p>
+      </li>
+      <li class="step reveal right" style="--d:300ms">
+        <span class="step__n" aria-hidden="true">iii.</span>
+        <h3>Recógelo o recíbelo</h3>
+        <p>Pasa por el Parque Lincoln a recogerlo caliente, o recíbelo con el envío de Mercat.</p>
+      </li>
+    </ol>
+    <div class="pedir__cta reveal">
+      <a class="btn btn--light js-order" href="#visitanos">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-.9.2-3-.6-2.5-1-4.1-3.6-4.2-3.8-.1-.2-1-1.3-1-2.5s.6-1.8.9-2.1c.2-.2.5-.3.6-.3h.5c.1 0 .4 0 .6.4l.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.5.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.6-.1 1.2Z"/></svg>
+        Pedir por WhatsApp
+      </a>
+      <a class="btn btn--line btn--line-light" href="https://www.mercat.bo/solo-pastas" target="_blank" rel="noopener">Pedir en Mercat</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== VISÍTANOS =================== -->
+<section class="visita" id="visitanos" aria-labelledby="visita-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="visita-title" class="h2 reveal">Frente al <em>Parque Lincoln</em></h2>
+      <p class="lead reveal" style="--d:120ms">Un salón luminoso con mesas de mantel blanco, y mesas en la vereda para los días de sol.</p>
+    </div>
+    <div class="visita__grid">
+      <figure class="visita__photo reveal left">
+        <img src="img/local.jpg" alt="Fachada de Solo Pastas Oeste-Lincoln, con su letrero rojo y mesas en la vereda" width="857" height="530" loading="lazy" data-source="client">
+      </figure>
+      <div class="info reveal right" style="--d:150ms">
+        <div class="info__block">
+          <p class="info__label">Dirección</p>
+          <p class="info__value">Manchay Puito 1995</p>
+          <p class="info__sub">Parque Lincoln, Cochabamba</p>
+        </div>
+        <div class="info__block">
+          <p class="info__label">Horario</p>
+          <p class="info__value" data-assumed>Todos los días, 11:30 – 22:00</p>
+          <p class="info__sub">Horario de la cadena. Confírmalo por WhatsApp antes de venir.</p>
+        </div>
+        <div class="info__block">
+          <p class="info__label">En el local</p>
+          <div class="services"><span>Salón</span><span>Mesas afuera</span><span>Para llevar</span><span>Pedidos en línea</span></div>
+        </div>
+        <div class="info__block">
+          <p class="info__label">Otras sucursales</p>
+          <ul>
+            <li>Av. Humboldt 932 <span>11:30 – 22:00</span></li>
+            <li>Pasos Kanki 2160 <span>Ciclovía</span></li>
+            <li>Paseo de Comidas <span>Aranjuez</span></li>
+          </ul>
+        </div>
+        <div class="info__actions">
+          <a class="btn btn--primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Solo+Pastas+Manchay+Puito+1995+Cochabamba">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8Z"/></svg>
+            Cómo llegar
+          </a>
+          <a class="btn btn--line btn--line-dark js-order" href="#como-pedir">Pedir para llevar</a>
+        </div>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe title="Mapa: Solo Pastas, Manchay Puito 1995, Cochabamba" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Manchay+Puito+1995,+Cochabamba,+Bolivia&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CIERRE =================== -->
+<section class="cierre" aria-labelledby="cierre-title">
+  <div class="wrap">
+    <img class="reveal zoom" src="img/logo.png" alt="" width="96" height="96" loading="lazy">
+    <h2 id="cierre-title" class="reveal" style="--d:120ms">Buon appetito<span>.</span></h2>
+    <p class="reveal" style="--d:220ms">Te esperamos en el Parque Lincoln, o en tu casa con un mensaje.</p>
+    <a class="btn btn--primary js-order reveal" style="--d:320ms" href="#como-pedir">Pedir ahora</a>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="tricolore" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap footer__grid">
+    <div>
+      <a class="brand" href="#inicio" aria-label="Solo Pastas, volver al inicio">
+        <img src="img/logo.png" alt="" width="54" height="54" loading="lazy">
+        <span class="brand__txt"><span class="brand__name">Solo Pastas</span><span class="brand__sub">Oeste · Lincoln</span></span>
+      </a>
+      <p class="footer__about">Trattoria italiana frente al Parque Lincoln, en Cochabamba.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/share/1MVmiLkqtA/" target="_blank" rel="noopener" aria-label="Facebook de Solo Pastas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.4H7.7V14h2.7v8Z"/></svg></a>
+        <a href="https://www.instagram.com/solopastascochabamba" target="_blank" rel="noopener" aria-label="Instagram de Solo Pastas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.tiktok.com/@solopastas_cbba_bolivia" target="_blank" rel="noopener" aria-label="TikTok de Solo Pastas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.4 2.2 1.8 3.6 4 3.8v3.1c-1.5 0-2.8-.4-4-1.2v6.2A5.9 5.9 0 1 1 10.7 9v3.2a2.8 2.8 0 1 0 2.8 2.8V3Z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Navega</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">La carta</a></li>
+        <li><a href="#como-pedir">Cómo pedir</a></li>
+        <li><a href="#visitanos">Visítanos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Pedidos</h4>
+      <ul>
+        <li><a class="js-order" href="#como-pedir">WhatsApp</a></li>
+        <li><a href="https://www.mercat.bo/solo-pastas" target="_blank" rel="noopener">Tienda en Mercat</a></li>
+        <li><a href="#visitanos">Para llevar</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Sucursales</h4>
+      <ul>
+        <li><span>Oeste · Manchay Puito 1995</span></li>
+        <li><span>Av. Humboldt 932</span></li>
+        <li><span>Pasos Kanki 2160 (Ciclovía)</span></li>
+        <li><span>Paseo de Comidas Aranjuez</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© <span id="year">2026</span> Solo Pastas · Oeste-Lincoln</span>
+    <span>Fotos de referencia vía Wikimedia Commons: J. Somoza, A. DeSantis, D. A. Kess, R. Diomede, frielp, D. Zambelli, Arnaud 25, M. Massaro (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA</a> / <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY</a>)</span>
+  </div>
+</footer>
+
+<!-- Barra de pedido en móvil -->
+<div class="mbar" id="mbar">
+  <a class="btn btn--line btn--line-light" href="#menu">La carta</a>
+  <a class="btn btn--primary js-order" href="#como-pedir">Pedir ahora</a>
+</div>
+
+<script>
+/* ==========================================================
+   CONFIGURACIÓN — edita aquí
+   ========================================================== */
+const CONFIG = {
+  whatsapp: '59176911505', // número general de la cadena (Linktree). Vacío = los botones llevan a "Cómo pedir"
+  saludo: '¡Hola Solo Pastas Oeste-Lincoln! Quiero hacer un pedido'
+};
+
+/* ==========================================================
+   CARTA (precios en Bs según la carta de Solo Pastas)
+   ========================================================== */
+const P = 'Con pasta larga a elección.';
+const MENU = [
+  { id:'pastas', label:'Pastas', img:'img/pastas-surtidas.jpg', alt:'Variedad de pastas: tallarines, fettuccine verdes y pastas cortas', intro:'Elige la pasta; la salsa la eliges con tu pedido.', note:'tipos de pasta: larga, corta, verde de espinaca y sin gluten.', items:[
+    { n:'Pasta larga', d:'Spaghetti, tallarín o fettuccine.', p:52 },
+    { n:'Pasta verde', d:'Ravioles, fettuccine o tallarín de espinaca.', p:52, t:'Espinaca' },
+    { n:'Pasta corta', d:'Gnocchi o ravioles.', p:62 },
+    { n:'Pasta sin gluten', d:'Spaghetti o fussili sin gluten.', p:67, t:'Sin gluten' }
+  ]},
+  { id:'principales', label:'Principales', img:'img/plato-principal.jpg', alt:'Fettuccine verde con filete en salsa de champiñones sobre mantel a cuadros', intro:'Todos con pasta larga a elección.', note:'principales de lomo, pollo, res y langostinos.', items:[
+    { n:'Medallones de lomo', d:'Lomo con tocino, mantequilla y salsa de la casa. '+P, p:87, t:'De la casa', r:1 },
+    { n:'Filete de pollo crema de champiñones', d:'Pechuga a la plancha en salsa cremosa con champiñón frito, con o sin ajo. '+P, p:72 },
+    { n:'Albóndigas', d:'Seis albóndigas en salsa de tomate con ajo y albahaca. '+P, p:72 },
+    { n:'Langostinos salsa blanca', d:'Seis langostinos en salsa cremosa de ajo. '+P, p:87 },
+    { n:'Langostinos salsa roja', d:'Seis langostinos en salsa pomodoro y ajo. '+P, p:87 },
+    { n:'Filete de pollo pomodoro', d:'Pechuga a la plancha con tomate, aceite de oliva, albahaca y orégano. '+P, p:67 },
+    { n:'Filete de pollo tres quesos', d:'Pechuga a la plancha en salsa de mozzarella, parmesano y roquefort. '+P, p:72 },
+    { n:'Filete de pollo roquefort', d:'Pechuga a la plancha en salsa cremosa de queso azul. '+P, p:72 },
+    { n:'Filete de pollo tres champiñones', d:'Pechuga a la plancha con champiñón, hongo blanco y portobello. '+P, p:72 },
+    { n:'Filete de res tres quesos', d:'Res a la plancha en salsa de mozzarella, parmesano y roquefort. '+P, p:72 },
+    { n:'Filete de res roquefort', d:'Res a la plancha en salsa cremosa de queso azul. '+P, p:72 },
+    { n:'Filete de res tres champiñones', d:'Res a la plancha con champiñón, hongo blanco y portobello. '+P, p:72 },
+    { n:'Pasta a la puttanesca', d:'Tomate fresco, aceite de oliva, ajo, aceituna negra, peperoncino, anchoas, alcaparras y albahaca.', p:67, t:'Picante', r:1 }
+  ]},
+  { id:'horno', label:'Al horno', img:'img/lasagna.jpg', alt:'Lasagna gratinada en fuente de barro con pan, tomates y ajíes', intro:'Gratinados en el horno, con bechamel y queso.', note:'pastas al horno: lasagnas, canelones, raviolis y gnocchi.', items:[
+    { n:'Lasagna', d:'Capas de pasta con carne molida de res, jamón, tuco y mozzarella al horno.', p:57 },
+    { n:'Lasagna vegetariana', d:'Pasta de espinaca en capas con berenjena, espinaca, champiñones y bechamel.', p:67, t:'Vegetariana' },
+    { n:'Lasagna con langostinos', d:'La lasagna clásica con seis langostinos al ajillo.', p:87, t:'De la casa', r:1 },
+    { n:'Canelón al gratín', d:'Relleno de pollo, ricotta y espinaca, con tuco (con o sin carne), bechamel y queso.', p:67 },
+    { n:'Canelón verde al gratín', d:'Pasta de espinaca rellena de ricotta y parmesano, con tuco, bechamel y queso.', p:67 },
+    { n:'Raviol al gratín', d:'Relleno de pollo, ricotta y espinaca, con tuco, bechamel y queso gratinado.', p:67 },
+    { n:'Raviol verde al gratín', d:'Pasta de espinaca rellena de ricotta y parmesano, con tuco, bechamel y queso.', p:67 },
+    { n:'Spaguetti al gratín', d:'Pasta larga gratinada con salsa Alfredo, tuco y queso al horno.', p:57 },
+    { n:'Gnocchi al gratín', d:'Gnocchi de papa con tuco (con o sin carne), bechamel y queso al horno.', p:67 }
+  ]},
+  { id:'aperitivos', label:'Aperitivos', img:'img/pan-ajo.jpg', alt:'Pan con ajo horneado y crocante en plato blanco', intro:'Para abrir la mesa o compartir.', note:'aperitivos: bruschettas, panzerotti y pan con ajo.', items:[
+    { n:'Bruschetta jamón y queso', d:'Pan horneado crocante con mantequilla, jamón, queso y orégano.', p:12 },
+    { n:'Bruschetta queso y hongos', d:'Pan crocante con mantequilla, mozzarella y hongos fritos.', p:17 },
+    { n:'Bruschetta queso y choclo', d:'Pan crocante con mantequilla, mozzarella y choclitos.', p:12 },
+    { n:'Bruschetta tomate y orégano', d:'Pan crocante con mantequilla, salsa de tomate y orégano.', p:9 },
+    { n:'Bruschetta a la pizza', d:'Pan crocante con salsa de tomate, mozzarella, jamón y orégano.', p:18 },
+    { n:'Pan con ajo', d:'Pan horneado crocante con aceite de ajo de la casa.', p:7 },
+    { n:'Panzerotti tradicional', d:'Empanada frita con salsa de tomate, mozzarella y orégano.', p:12 },
+    { n:'Panzerotti fungi', d:'Empanada frita con bechamel, mozzarella y hongos fritos.', p:15 },
+    { n:'Panzerotti picante', d:'Empanada frita con salsa de tomate, mozzarella, picante y orégano.', p:12, t:'Picante', r:1 },
+    { n:'Panzerotti langostinos', d:'Empanada frita con bechamel, mozzarella y langostinos al ajillo.', p:30 },
+    { n:'Combo panzerotti', d:'Seis panzerotti clásicos, picantes o tradicionales.', p:50, t:'Para compartir' },
+    { n:'Dip de pan con ajo', d:'Dos porciones de pan con ajo con salsa tradicional a elección.', p:30 }
+  ]},
+  { id:'postres', label:'Postres y extras', img:'img/tiramisu.jpg', alt:'Porción de tiramisú espolvoreada con cacao en plato blanco', intro:'Un dulce para cerrar, o algo más para tu pasta.', note:'postres y extras para sumar a tu plato.', items:[
+    { n:'Tiramisú', d:'El clásico postre italiano de café y mascarpone.', p:20, t:'Postre' },
+    { n:'Cheesecake de temporada', d:'Con la fruta de la temporada.', p:20, t:'Postre' },
+    { n:'Postre del día', d:'Pregunta por el postre de hoy.', p:20, t:'Postre' },
+    { n:'Gelato (paleta)', d:'Paleta de helado italiano.', p:10, t:'Postre' },
+    { n:'Salsa extra', d:'Una porción más de la salsa que elijas.', p:30, t:'Extra', r:1 },
+    { n:'Queso parmesano', d:'Porción extra de parmesano.', p:15, t:'Extra', r:1 },
+    { n:'Champiñones fritos', d:'Porción extra para sumar a tu plato.', p:20, t:'Extra', r:1 },
+    { n:'Langostinos extra', d:'Suma langostinos a cualquier pasta.', p:40, t:'Extra', r:1 }
+  ]},
+  { id:'bebidas', label:'Bebidas y vinos', img:'img/vino.jpg', alt:'Copa de vino junto a una vela encendida sobre mesa de madera', intro:'Jugos, gaseosas y vinos para acompañar.', note:'bebidas, con tintos de Campos de Solana.', items:[
+    { n:'Jugos del Sol', d:'Jugo para la mesa.', p:20 },
+    { n:'Jugo del Sol personal', d:'Jugo en tamaño personal.', p:12 },
+    { n:'Agua', d:'Agua embotellada.', p:12 },
+    { n:'Gaseosas', d:'Pregunta por los sabores disponibles.', p:null },
+    { n:'Vino reserva 375 ml', d:'Media botella de vino reserva.', p:80, t:'Vino', r:1 },
+    { n:'Vino botella clásicos', d:'Pregunta por las etiquetas disponibles.', p:null, t:'Vino', r:1 },
+    { n:'Sweet', d:'Vino dulce en botella.', p:135, t:'Vino', r:1 },
+    { n:'Cabernet Sauvignon', d:'Botella de vino tinto.', p:145, t:'Vino', r:1 },
+    { n:'Tannat Campos de Solana', d:'Botella de vino tinto tannat.', p:145, t:'Vino', r:1 },
+    { n:'Trivarietal Campos de Solana', d:'Botella de vino tinto de tres cepas.', p:200, t:'Vino', r:1 }
+  ]}
+];
+
+document.documentElement.classList.add('js');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+
+/* ---------- WhatsApp ---------- */
+function wireOrders(scope=document){
+  if(!CONFIG.whatsapp) return;
+  $$('.js-order', scope).forEach(a => {
+    const msg = a.dataset.dish ? `${CONFIG.saludo}: 1 x ${a.dataset.dish}` : CONFIG.saludo + '.';
+    a.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+}
+
+/* ---------- Carta con pestañas ---------- */
+(function carta(){
+  const tabs = $('#tabs'), list = $('#dishes'), vis = $('#carta-visual'), img = $('#carta-img');
+  const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  tabs.innerHTML = MENU.map(c => `<button class="tab" type="button" role="tab" id="tab-${c.id}" aria-controls="dishes" aria-selected="false" tabindex="-1" data-cat="${c.id}">${c.label}<sup>${c.items.length}</sup></button>`).join('');
+
+  function render(id){
+    const cat = MENU.find(c => c.id === id);
+    list.setAttribute('aria-labelledby', 'tab-' + id);
+    $('#carta-intro').textContent = cat.intro;
+    $('#carta-count').textContent = cat.items.length;
+    $('#carta-note').textContent = cat.note;
+    if(img.getAttribute('src') !== cat.img){
+      vis.classList.add('is-swap');
+      setTimeout(() => {
+        img.src = cat.img; img.alt = cat.alt;
+        const done = () => vis.classList.remove('is-swap');
+        img.complete ? done() : img.addEventListener('load', done, { once:true });
+      }, reduce ? 0 : 260);
+    } else img.alt = cat.alt;
+
+    list.innerHTML = cat.items.map((it,i) => `
+      <li class="dish" style="--i:${i}">
+        <div class="dish__name"><h3>${it.n}</h3><span class="dish__lead" aria-hidden="true"></span></div>
+        ${it.p ? `<span class="dish__price"><small>Bs</small>${it.p}</span>` : '<span class="dish__price ask">Consultar</span>'}
+        <p>${it.d}</p>
+        <div class="dish__side">
+          ${it.t ? `<span class="tag ${it.r ? 'tag--rosso' : ''}">${it.t}</span>` : ''}
+          <a class="link js-order" href="#como-pedir" data-dish="${it.n}">Pedir<span class="sr-only"> ${it.n}</span> ${arrow}</a>
+        </div>
+      </li>`).join('');
+    wireOrders(list);
+  }
+  function select(btn, focus){
+    $$('.tab', tabs).forEach(b => { const on = b === btn; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; });
+    if(focus) btn.focus();
+    render(btn.dataset.cat);
+  }
+  tabs.addEventListener('click', e => { const b = e.target.closest('.tab'); if(b && b.getAttribute('aria-selected') !== 'true') select(b); });
+  tabs.addEventListener('keydown', e => {
+    const all = $$('.tab', tabs), i = all.indexOf(document.activeElement);
+    if(i < 0) return;
+    const map = { ArrowRight:(i+1)%all.length, ArrowLeft:(i-1+all.length)%all.length, Home:0, End:all.length-1 };
+    if(e.key in map){ e.preventDefault(); select(all[map[e.key]], true); }
+  });
+  select($('#tab-principales'));
+})();
+
+/* ==========================================================
+   1) NAVBAR
+   ========================================================== */
+(function nav(){
+  const nav = $('#nav'), bar = $('#progress'), burger = $('#burger'), mbar = $('#mbar');
+  let lastY = scrollY, ticking = false;
+  const isOpen = () => nav.classList.contains('is-open');
+  function update(){
+    const y = scrollY;
+    nav.classList.toggle('is-compact', y > 40);
+    if(!isOpen()){
+      if(y > lastY && y > 160) nav.classList.add('is-hidden');
+      else if(y < lastY) nav.classList.remove('is-hidden');
+    }
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
+    if(mbar) mbar.classList.toggle('is-off', y < innerHeight * .7 || y > max - 140);
+    lastY = y; ticking = false;
+  }
+  addEventListener('scroll', () => { if(!ticking){ requestAnimationFrame(update); ticking = true; } }, { passive:true });
+  addEventListener('resize', update);
+  update();
+
+  function setMenu(open){
+    nav.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    document.body.style.overflow = open ? 'hidden' : '';
+    if(open) nav.classList.remove('is-hidden');
+  }
+  burger.addEventListener('click', () => setMenu(!isOpen()));
+  $$('#nav-links a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if(e.key === 'Escape' && isOpen()){ setMenu(false); burger.focus(); } });
+  matchMedia('(min-width: 860px)').addEventListener('change', e => { if(e.matches) setMenu(false); });
+
+  // Link activo según la sección visible
+  const links = $$('[data-link]');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if(!en.isIntersecting) return;
+      links.forEach(l => {
+        const on = l.dataset.link === en.target.id;
+        l.classList.toggle('is-active', on);
+        on ? l.setAttribute('aria-current', 'true') : l.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin:'-45% 0px -50% 0px' });
+  ['inicio','menu','como-pedir','visitanos'].forEach(id => { const s = document.getElementById(id); if(s) io.observe(s); });
+})();
+
+/* ==========================================================
+   2) SCROLL REVEAL (una sola vez por elemento)
+   ========================================================== */
+(function reveal(){
+  const els = $$('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){ els.forEach(el => el.classList.add('is-visible')); return; }
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('is-visible'); obs.unobserve(en.target); } });
+  }, { threshold:0.15 });
+  els.forEach(el => io.observe(el));
+})();
+
+$('#year').textContent = new Date().getFullYear();
+wireOrders();
+</script>
+</body>
+</html>
